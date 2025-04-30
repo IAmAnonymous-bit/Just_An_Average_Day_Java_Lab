@@ -4,11 +4,88 @@
 package org.example;
 
 public class App {
-    public String getGreeting() {
+    public String getGreeting() 
+    {
         return "Hello World!";
+
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args) 
+    {
+        //System.out.println(new App().getGreeting());
+        Maximum max = new Maximum();
+        Minimum min = new Minimum();
+        Sum sum = new Sum();
+        Average average = new Average();
+        int[] emptyList = new int[0];
+        int[] fullList = {5, 3, 3, 1, 2, 3, 10, 3, 3};
+
+        try
+        {
+            System.out.println(max.maxLoop(emptyList));
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Max Loop Error: " + e);
+
+        }
+
+        try
+        {
+            System.out.println(max.maxStream(emptyList));
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Max Stream Error: " + e);
+
+        }
+
+        try
+        {
+            System.out.println(min.minLoop(emptyList));
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Min Loop Error: " + e);
+
+        }
+
+        try
+        {
+            System.out.println(min.minStream(emptyList));
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Min Stream Error: " + e);
+
+        }
+
+        try
+        {
+            System.out.println(average.averageLoop(emptyList));
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Average Loop Error: " + e);
+
+        }
+
+        try
+        {
+            System.out.println(average.averageStream(emptyList));
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Average Stream Error: " + e);
+
+        }
+
+        System.out.println("Empty Sum Loop: " + sum.sumLoop(emptyList));
+        System.out.println("Empty Sum Stream: " + sum.sumStream(emptyList));
+
+        System.out.println("Max Loop: " + max.maxLoop(fullList));
+        System.out.println("Max Stream: " + max.maxStream(fullList));
+        System.out.println("Min Loop: " + min.minLoop(fullList));
+        System.out.println("Min Stream: " + min.minStream(fullList));
+        System.out.println("Sum Loop: " + sum.sumLoop(fullList));
+        System.out.println("Sum Stream: " + sum.sumStream(fullList));
+        System.out.println("Average Loop: " + average.averageLoop(fullList));
+        System.out.println("Average Stream: " + average.averageStream(fullList));
+
     }
+    
 }
